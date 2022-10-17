@@ -1,0 +1,42 @@
+/***GERAL***/
+
+:root {
+  font-size: 62.5%;
+  --body-bg-color: #121214;
+  --text-color: #e1e1e6;
+  --title-color: #04d361;
+  --form-color: #a8a8a8;
+  --bg-button-color: #8257e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: 'Spartan', 'Work Sans';
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+/***SPECIFIC***/
+main {
+  display: grid;
+  grid-template-areas: 'content banner';
+  grid-template-columns: repeat(1fr, 2);
+  height: 100vh;
+}
+
+.content {
+  grid-area: content;
+  background-color: var(--body-bg-color);
+  padding: 5rem 3rem;
+}
+
+.banner {
+  grid-area: banner;
+  background-image: url('../img/read_news.jpg');
+  background-position: -400px center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
