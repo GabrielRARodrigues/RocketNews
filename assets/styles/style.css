@@ -4,9 +4,12 @@
   font-size: 62.5%;
   --body-bg-color: #121214;
   --text-color: #e1e1e6;
-  --title-color: #04d361;
+  --border-color: #04d361;
   --form-color: #a8a8a8;
   --bg-button-color: #8257e5;
+  --title-color: #08c05e;
+  --font-family-Spartan: 'Spartan', 'Work Sans';
+  --font-family-Work: 'Work Sans', 'Spartan';
 }
 
 * {
@@ -14,7 +17,7 @@
 }
 
 body * {
-  font-family: 'Spartan', 'Work Sans';
+  font-family: var(--font-family-Spartan);
   font-weight: 400;
   font-size: 1.6rem;
 }
@@ -23,7 +26,7 @@ body * {
 main {
   display: grid;
   grid-template-areas: 'content banner';
-  grid-template-columns: repeat(1fr, 2);
+  grid-template-columns: 50% 50%;
   height: 100vh;
 }
 
@@ -39,4 +42,96 @@ main {
   background-position: -400px center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.header__img {
+  width: 50%;
+}
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contents__title {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: lowercase;
+  font-family: var(--font-family-Work);
+}
+
+.contents__subtitle {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.contents__text {
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+}
+
+.form__label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--form-color);
+}
+
+.form .input {
+  display: flex;
+  width: 55vw;
+  position: relative;
+}
+
+.input__email {
+  border: none;
+  display: inline-block;
+  width: 100%;
+  padding: 1.7rem 1rem;
+  border-left: 5px solid var(--border-color);
+}
+
+.input__button {
+  cursor: pointer;
+  border: none;
+  width: 4.8rem;
+  background-color: var(--bg-button-color);
+  background-image: url('../img/send.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.form__link {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--bg-button-color);
+
+  display: flex;
+  align-items: center;
+}
+
+.form__link::after {
+  content: '';
+  margin: 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../img/arrow-right.svg');
+  stroke: var(--bg-button-color);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
