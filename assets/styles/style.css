@@ -6,7 +6,8 @@
   --text-color: #e1e1e6;
   --border-color: #04d361;
   --form-color: #a8a8a8;
-  --bg-button-color: #8257e5;
+  --bg-button-color: hsl(258, 73%, 62%);
+  --bg-button-color-hover: hsl(258, 45%, 46%);
   --title-color: #08c05e;
   --font-family-Spartan: 'Spartan', 'Work Sans';
   --font-family-Work: 'Work Sans', 'Spartan';
@@ -34,12 +35,15 @@ main {
   grid-area: content;
   background-color: var(--body-bg-color);
   padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 .banner {
   grid-area: banner;
   background-image: url('../img/read_news.jpg');
-  background-position: -400px center;
+  background-position: 75% center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -48,6 +52,7 @@ main {
   width: 50%;
 }
 .contents {
+  margin-top: 42px;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -102,6 +107,7 @@ main {
   width: 100%;
   padding: 1.7rem 1rem;
   border-left: 5px solid var(--border-color);
+  transition: all 250ms;
 }
 
 .input__button {
@@ -113,6 +119,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
+  transition: all 250ms;
 }
 
 .form__link {
@@ -122,6 +129,8 @@ main {
 
   display: flex;
   align-items: center;
+  text-decoration: none;
+  transition: all 250ms;
 }
 
 .form__link::after {
@@ -134,4 +143,23 @@ main {
   stroke: var(--bg-button-color);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/***USER INTERACTIONS***/
+.input__email:focus {
+  transition: all 250ms;
+  border: 2px solid var(--border-color);
+  border-left: 5px solid var(--bg-button-color);
+  outline: none;
+}
+
+.input__button:hover {
+  transition: all 250ms;
+  background-color: var(--bg-button-color-hover);
+}
+
+.form__link:hover {
+  font-size: 1.6rem;
+  transition: all 250ms;
+  color: var(--title-color);
 }
